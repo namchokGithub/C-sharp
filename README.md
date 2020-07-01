@@ -1,2 +1,0 @@
-# C-sharp
-learning C# 
