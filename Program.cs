@@ -7,9 +7,19 @@ namespace C_sharp
 {
     // Class: car
     // Author: Namchok
-    class car
+    class Car
     {
+        public string color;
+        public string Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
 
+        static void setColor(string color = "black")
+        {
+            color = color;
+        }
     }
 
     // Class: Program
@@ -20,9 +30,27 @@ namespace C_sharp
         static void myMethod()
         {
             System.Console.WriteLine("Test");
+
+            Car c1 = new Car();
+            // c1.getColor();
         }
         static void Main(string[] args)
         {
+
+            try
+            {
+                int[] myNumber = { 1, 2, 3 };
+                System.Console.WriteLine(myNumber[11]);
+            }
+            catch (System.Exception)
+            {
+                System.Console.WriteLine("Something went wrong");
+                // throw;
+            }
+            finally
+            {
+                Console.WriteLine("The 'try catch' is finished.");
+            }
             myMethod();
             Console.WriteLine("Hello World!");
 
