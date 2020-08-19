@@ -33,9 +33,9 @@ namespace C_sharp
             Car c1 = new Car();
             // c1.getColor();
         }
-        static void Main(string[] args)
-        {
 
+        static void hashkey()
+        {
             PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
             Hash hashResultSha256 = pwHasher.HashWithSalt("ultra_safe_P455w0rD", 64, SHA256.Create());
             Hash hashResultSha512 = pwHasher.HashWithSalt("ultra_safe_P455w0rD", 64, SHA512.Create());
@@ -45,6 +45,12 @@ namespace C_sharp
             Console.WriteLine();
             Console.WriteLine(hashResultSha512.Salt);
             Console.WriteLine(hashResultSha512.Digest);
+        }
+
+        static void Main(string[] args)
+        {
+
+            hashkey();
 
             // try
             // {
