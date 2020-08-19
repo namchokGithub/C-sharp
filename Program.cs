@@ -1,5 +1,5 @@
 ﻿// Tutorial C Sharp
-
+using System.Security.Cryptography;
 using System;
 using System.Linq;
 
@@ -26,7 +26,6 @@ namespace C_sharp
     // Author: Namchok
     class Program
     {
-
         static void myMethod()
         {
             System.Console.WriteLine("Test");
@@ -37,104 +36,114 @@ namespace C_sharp
         static void Main(string[] args)
         {
 
-            try
-            {
-                int[] myNumber = { 1, 2, 3 };
-                System.Console.WriteLine(myNumber[11]);
-            }
-            catch (System.Exception)
-            {
-                System.Console.WriteLine("Something went wrong");
-                // throw;
-            }
-            finally
-            {
-                Console.WriteLine("The 'try catch' is finished.");
-            }
-            myMethod();
-            Console.WriteLine("Hello World!");
+            PasswordWithSaltHasher pwHasher = new PasswordWithSaltHasher();
+            Hash hashResultSha256 = pwHasher.HashWithSalt("ultra_safe_P455w0rD", 64, SHA256.Create());
+            Hash hashResultSha512 = pwHasher.HashWithSalt("ultra_safe_P455w0rD", 64, SHA512.Create());
 
-            // https://www.w3schools.com/cs
+            Console.WriteLine(hashResultSha256.Salt);
+            Console.WriteLine(hashResultSha256.Digest);
+            Console.WriteLine();
+            Console.WriteLine(hashResultSha512.Salt);
+            Console.WriteLine(hashResultSha512.Digest);
 
-            // data type
-            int a = 10;
-            double b = 11.1;
-            char c = 'c';
-            string d = "Dog";
-            bool e = false;
+            // try
+            // {
+            //     int[] myNumber = { 1, 2, 3 };
+            //     System.Console.WriteLine(myNumber[11]);
+            // }
+            // catch (System.Exception)
+            // {
+            //     System.Console.WriteLine("Something went wrong");
+            //     // throw;
+            // }
+            // finally
+            // {
+            //     Console.WriteLine("The 'try catch' is finished.");
+            // }
+            // myMethod();
+            // Console.WriteLine("Hello World!");
 
-            string name = "John";
-            Console.WriteLine("Hello " + name);
+            // // https://www.w3schools.com/cs
 
-            // casting
-            int myInt = 10;
-            double myDouble = 5.25;
-            bool myBool = true;
+            // // data type
+            // int a = 10;
+            // double b = 11.1;
+            // char c = 'c';
+            // string d = "Dog";
+            // bool e = false;
 
-            Console.WriteLine(Convert.ToString(myInt));
-            Console.WriteLine(Convert.ToDouble(myInt));
-            Console.WriteLine(Convert.ToInt32(myDouble));
-            Console.WriteLine(Convert.ToString(myBool));
+            // string name = "John";
+            // Console.WriteLine("Hello " + name);
 
-            //  User input
-            // Type your username and press enter
-            // Console.WriteLine("Enter username:");
+            // // casting
+            // int myInt = 10;
+            // double myDouble = 5.25;
+            // bool myBool = true;
 
-            // // Create a string variable and get user input from the keyboard and store it in the variable
-            // string userName = Console.ReadLine();
+            // Console.WriteLine(Convert.ToString(myInt));
+            // Console.WriteLine(Convert.ToDouble(myInt));
+            // Console.WriteLine(Convert.ToInt32(myDouble));
+            // Console.WriteLine(Convert.ToString(myBool));
 
-            // // Print the value of the variable (userName), which will display the input value
-            // Console.WriteLine("Username is: " + userName);
+            // //  User input
+            // // Type your username and press enter
+            // // Console.WriteLine("Enter username:");
 
-            System.Console.WriteLine(Math.Max(5, 10));
+            // // // Create a string variable and get user input from the keyboard and store it in the variable
+            // // string userName = Console.ReadLine();
 
-            // if else
-            if (1 > 2)
-            {
-                System.Console.WriteLine(22);
-            }
-            else
-            {
-                System.Console.WriteLine(12123);
-            }
+            // // // Print the value of the variable (userName), which will display the input value
+            // // Console.WriteLine("Username is: " + userName);
 
-            // short hand if else 
-            int time = 20;
-            string result = (time < 18) ? "Good day." : "Good evening.";
-            Console.WriteLine(result);
+            // System.Console.WriteLine(Math.Max(5, 10));
 
-            // while loop
-            int i = 0;
-            do
-            {
-                Console.WriteLine(i);
-                i++;
-            }
-            while (i < 5);
+            // // if else
+            // if (1 > 2)
+            // {
+            //     System.Console.WriteLine(22);
+            // }
+            // else
+            // {
+            //     System.Console.WriteLine(12123);
+            // }
 
-            // for loop
-            for (int bb = 0; bb < 5; bb++)
-            {
-                Console.WriteLine(bb);
-            }
+            // // short hand if else 
+            // int time = 20;
+            // string result = (time < 18) ? "Good day." : "Good evening.";
+            // Console.WriteLine(result);
 
-            // array
-            string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
-            foreach (string rr in cars)
-            {
-                Console.WriteLine(rr);
-            }
-            Array.Sort(cars);
-            foreach (string rr in cars)
-            {
-                Console.WriteLine(rr);
-            }
+            // // while loop
+            // int i = 0;
+            // do
+            // {
+            //     Console.WriteLine(i);
+            //     i++;
+            // }
+            // while (i < 5);
 
-            // System.Linq Namespace
-            int[] myNumbers = { 5, 1, 8, 9 };
-            Console.WriteLine(myNumbers.Max());  // returns the largest value
-            Console.WriteLine(myNumbers.Min());  // returns the smallest value
-            Console.WriteLine(myNumbers.Sum());  // returns the sum of elements
+            // // for loop
+            // for (int bb = 0; bb < 5; bb++)
+            // {
+            //     Console.WriteLine(bb);
+            // }
+
+            // // array
+            // string[] cars = { "Volvo", "BMW", "Ford", "Mazda" };
+            // foreach (string rr in cars)
+            // {
+            //     Console.WriteLine(rr);
+            // }
+            // Array.Sort(cars);
+            // foreach (string rr in cars)
+            // {
+            //     Console.WriteLine(rr);
+            // }
+
+            // // System.Linq Namespace
+            // int[] myNumbers = { 5, 1, 8, 9 };
+            // Console.WriteLine(myNumbers.Max());  // returns the largest value
+            // Console.WriteLine(myNumbers.Min());  // returns the smallest value
+            // Console.WriteLine(myNumbers.Sum());  // returns the sum of elements
         }
     }
 }
