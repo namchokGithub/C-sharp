@@ -13,19 +13,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\learning c sharp\\C-sharp\\C-sharp.csproj",
+      "projectUniqueName": "D:\\C-sharp\\C-sharp.csproj",
       "projectName": "C-sharp",
-      "projectPath": "D:\\learning c sharp\\C-sharp\\C-sharp.csproj",
+      "projectPath": "D:\\C-sharp\\C-sharp.csproj",
       "packagesPath": "C:\\Users\\Namchok\\.nuget\\packages\\",
-      "outputPath": "D:\\learning c sharp\\C-sharp\\obj\\",
+      "outputPath": "D:\\C-sharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Namchok\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -56,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
