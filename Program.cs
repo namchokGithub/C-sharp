@@ -18,7 +18,8 @@ namespace C_sharp
 
         static void setColor(string color = "black")
         {
-            color = color;
+            string temp = color;
+            color = temp;
         }
     }
 
