@@ -2,6 +2,7 @@
 
 using System;
 using System.Linq;
+using Hash.cs;
 
 namespace C_sharp
 {
